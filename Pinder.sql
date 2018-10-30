@@ -10,41 +10,42 @@ END $$;
 
 
 CREATE TABLE Person (
-	ID integer PRIMARY KEY, 
-	LoginID varchar UNIQUE ,
+	PersonId integer PRIMARY KEY, 
+	LoginId varchar UNIQUE ,
 	Password varchar,
 	ProfilePhotos varchar NULL,
-	Name varchar NULL,
+	Name varchar NOT NULL,
 	PhoneNum varchar NULL,
 	Email varchar NULL,
 	Rating decimal NULL,
 	RatingNum Integer NULL
 	);
 
-CREATE TABLE BreedID (
-	ID integer PRIMARY KEY, 
+CREATE TABLE Breed (
+	BreedId integer PRIMARY KEY, 
 	Description varchar,
 	QuizAttr integer,
 	Picture varchar
 	);
 
 CREATE TABLE Dog (
-	ID integer PRIMARY KEY, 
+	DogId integer PRIMARY KEY, 
 	name varchar,
 	Bio varchar,
 	Age integer,
-	SellerID integer REFERENCES Person(ID),
+	Sex varchar, -- change to char and limit?
+	SellerId integer REFERENCES Person(PersonId),
 	Price money,
-	BreedID integer REFERENCES BreedID(ID)
+	BreedId integer REFERENCES Breed(BreedId)
 	);
 
 CREATE TABLE Matches (
-	PersonID integer REFERENCES Person(ID),
-	DogID integer REFERENCES Dog(ID)
+	PersonId integer REFERENCES Person(PersonId),
+	DogId integer REFERENCES Dog(DogId)
 	);
 
 CREATE TABLE Photos (
-	DogID integer REFERENCES Dog(ID), 
+	DogId integer REFERENCES Dog(DogId), 
 	Photo varchar
 	);
 
