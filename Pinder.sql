@@ -10,53 +10,53 @@ END $$;
 
 
 CREATE TABLE Person (
-	PersonId integer PRIMARY KEY, 
-	LoginId varchar UNIQUE ,
-	Password varchar,
-	ProfilePhotos varchar NULL,
-	Name varchar NOT NULL,
-	PhoneNum varchar NULL,
-	Email varchar NULL,
-	Rating decimal NULL,
-	RatingNum Integer NULL
+	personID integer PRIMARY KEY, 
+	loginID varchar UNIQUE ,
+	password varchar,
+	profilephoto varchar NULL,
+	name varchar NOT NULL,
+	phonenum varchar NULL,
+	email varchar NULL,
+	rating decimal NULL,
+	numRatings Integer NULL
 	);
 
 CREATE TABLE Breed (
-	BreedId integer PRIMARY KEY, 
-	Description varchar,
-	QuizAttr integer,
-	Picture varchar
+	breedID integer PRIMARY KEY, 
+	description varchar,
+	quizattr integer,
+	picture varchar
 	);
 
 CREATE TABLE Dog (
-	DogId integer PRIMARY KEY, 
+	dogID integer PRIMARY KEY, 
 	name varchar,
-	Bio varchar,
-	Age integer,
-	Sex varchar, -- change to char and limit?
-	SellerId integer REFERENCES Person(PersonId),
-	Price money,
-	BreedId integer REFERENCES Breed(BreedId)
+	bio varchar,
+	age integer,
+	sex varchar, -- change to char and limit?
+	personID integer REFERENCES Person(personID),
+	price money,
+	breedID integer REFERENCES Breed(breedID)
 	);
 
 CREATE TABLE Matches (
-	PersonId integer REFERENCES Person(PersonId),
-	DogId integer REFERENCES Dog(DogId)
+	personID integer REFERENCES Person(personID),
+	dogID integer REFERENCES Dog(dogID)
 	);
 
 CREATE TABLE Photos (
-	DogId integer REFERENCES Dog(DogId), 
-	Photo varchar
+	dogID integer REFERENCES Dog(dogID), 
+	photo varchar
 	);
 
 GRANT SELECT ON Person TO PUBLIC;
-GRANT SELECT ON BreedID TO PUBLIC;
+GRANT SELECT ON Breed TO PUBLIC;
 GRANT SELECT ON Matches TO PUBLIC;
 GRANT SELECT ON Dog TO PUBLIC;
 GRANT SELECT ON Photos TO PUBLIC;
 
 INSERT INTO Person VALUES (1,'AndrewThomas','thisissecure','/home/justin/Pictures/dog1','Andrew Thomas','586-761-1141','Athomas@gmail.com',4.3,100);
-INSERT INTO BreedID VALUES (1,'Dalminations are dogs that are black and white',200,'/home/justin/Pictures/dog1/picture1.png');
+INSERT INTO Breed VALUES (1,'Dalminations are dogs that are black and white',200,'/home/justin/Pictures/dog1/picture1.png');
 INSERT INTO Dog VALUES (1,'Dalminations','black and white',12,1,100.10,1);
 INSERT INTO Matches VALUES (1,1);
 INSERT INTO Photos VALUES (1,'/home/justin/Pictures/dog1/picture1.png');
