@@ -1,0 +1,32 @@
+Clamming Troops
+Professor Vander Linden 
+CS262
+Usability Test Report
+
+  For our usability tests, we chose to test the five main app functionalities (list a pet, take a quiz, adopt a pet, create an account, 
+and view your matches) to see how well our users could understand the app’s logic. The tasks included creating an account with a username 
+and password, putting a dog up for adoption and contacting the adopter, taking the quiz, and updating their profile information. 
+  We also asked for reactions about the user interface, verbiage, and overall impression. To best understand our users, we began by 
+asking preliminary questions about their familiarity with dating app interfaces, their likelihood to adopt a dog, and where else they might look to find a pet. 
+As the tests proceeded, we noticed some recurring issues that users encountered with our app. These issues include:
+  -Lack of a button to go back to the homepage once he or she entered an activity
+  -Confusion with the scrolling feature of the quiz
+  -Quiz questions that didn’t seem relevant to a person’s dog search, such as
+     -Grooming preferences 
+     -Shedding preferences 
+  -My Matches button not working on the “My Profile” page
+  -Inability to unmatch with a pet
+The usability tests also encouraged us to change some of the verbiage within our app, as some of our current word choices were not clear
+to our users. Some of the words and phrases we intend to change include:
+  -The word ‘wiry,’ used to describe dog fur
+  -The phrase ‘Quiz,’ which lacked a description of what the quiz is for
+  -The phrase ‘List A Pet,’ for putting a pet up for adoption 
+  -The phrase ‘Coat Type,’ referring to fur type
+Other recommendations included sending new users straight to the “My Profile” page so they can add the information right away, adding 
+ages to the pet profiles, adding a drop down menu for dog breeds when listing pets, and adding prices to pet listings. 
+  Another larger issue we noticed was the lack of cohesion between the “List A Pet” inputs and the “Adopt A Pet” outputs. It makes sense
+that the two should have identical information, and yet our current app has “Adopt A Pet” showing breed, gender, and name, and 
+“List A Pet,” requiring breed, gender, name, energy level, house training, and dog size. As we move forward, we intend to make sure
+the two match in terms of content. 
+	Since our usability tests, we have already began to distribute the following tasks to make adjustments to our app. We hope to rectify
+as many as possible in order to make Pinder as functional and user-friendly as possible.
